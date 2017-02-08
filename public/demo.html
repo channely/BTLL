@@ -1,113 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>三级联动表格</title>
+    <meta charset="UTF-8">
+    <title>Example</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/bootstrap-table.css"/>
-    <link rel="stylesheet" href="./css/styles.css"/>
-    <script src="./js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="./js/bootstrap-table.js"></script>
-    <script src="./js/handlebars.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-table.css">
 </head>
-<script id="first-template" type="text/x-handlebars-template">
-    <thead>
-    <tr>
-        <th>{{name}}</th>
-    </tr>
-    </thead>
-    <tbody>
-    {{#each data}}
-    <tr id={{id}}>
-        <td>{{title}}</td>
-    </tr>
-    {{/each}}
-    </tbody>
-</script>
-
-
-
-
-
 <body>
-<div class="row">
-    <div class="col-md-3">
-        <table id="control-first"></table>
+    <h3 class="text-center">三级联动控件</h3>
+    <div class="col-lg-2">
+        <table id="table1"></table>
     </div>
-    <div class="col-md-3">
-        <table id="control-second"></table>
+    <div class="col-lg-2">
+        <table id="table2"></table>
     </div>
-    <div class="col-md-6">
-        <table id="control-table"></table>
+    <div class="col-lg-8">
+        <table id="table3"></table>
     </div>
-</div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-table.js"></script>
+    <script src="js/demo.js"></script>
 </body>
 </html>
-<script>
-    //	渲染第一层
-
-    $('#control-first').bootstrapTable({
-        url: 'table.php',                   //请求后台的URL（*）
-        method: 'get',                      //请求方式（*）
-        striped: true,                      //是否显示行间隔色
-        cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
-        pageNumber: 1,                       //初始化加载第一页，默认第一页
-        onClickRow:function(row){
-            alert(row)
-        }
-    });
-
-    $.ajax({
-        type:"get",
-        url:"table.php",
-        data:{pageid:"name"},
-        async:false,
-        success:function(data){
-            data=$.parseJSON(data);
-            var myTemplate = Handlebars.compile($("#first-template").html());
-            $('#control-first').html(myTemplate(data));
-        },
-    });
-
-    //渲染第二层
-    $('#control-second').bootstrapTable({
-        url: 'table.php',                  //请求后台的URL（*）
-        method: 'get',                      //请求方式（*）
-        striped: true,                      //是否显示行间隔色
-        cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
-//		queryParams: queryParams,           //传递参数（*）
-        pageNumber: 1,                       //初始化加载第一页，默认第一页
-    });
-
-    //
-    //	function queryParams(params) {  //配置参数
-    //		var temp = {   //这里的键的名字和控制器的变量名必须一致，这边改动，控制器也需要改成一样的
-    //			id:params
-    //		};
-    //		return temp;
-    //	}
-
-    $('#control-first tr').on('click', function () {
-        var that = this.id;
-        $.ajax({
-            type:"get",
-            url:"table.php",
-            data:{firstID:that},
-            success:function(data){
-                data=$.parseJSON(data);
-//			console.log(data.list);
-                var myTemplate = Handlebars.compile($("#first-template").html());
-                $('#control-second').html(myTemplate(data));
-            }
-        })
-    });
-
-
-
-
-
-
-
-</script>
-
