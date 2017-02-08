@@ -1,0 +1,105 @@
+{
+	"name": "控制层面",
+	"data": [
+		{
+			"id": "safetyPolicy",
+			"data": [
+				{
+					"id":"safetyPolicy-first",
+					"title": "5.1.1信息安全方针信息安全方针"
+				},
+				{
+					"id":"safetyPolicy-second",
+					"title": "5.1.1信息安全方针信息安全方针"
+				},
+				{
+					"id":"safetyPolicy-third",
+					"title": "5.1.1信息安全方针信息安全方针"
+				},
+				{
+					"id":"safetyPolicy-forth",
+					"title": "5.1.1信息安全方针信息安全方针"
+				},
+				{
+					"id":"safetyPolicy-fifth",
+					"title": "5.1.1信息安全方针信息安全方针"
+				}
+			]
+		},
+		{
+			"id": "infoSafety",
+			"data": [
+				{
+					"id":"infoSafety-first",
+					"title": "5.2.1信息安全方针信息安全方针"
+				},
+				{
+					"id":"infoSafety-second",
+					"title": "5.2.1信息安全方针信息安全方针"
+				},
+				{
+					"id":"infoSafety-third",
+					"title": "5.2.1信息安全方针信息安全方针"
+				},
+				{
+					"id":"infoSafety-forth",
+					"title": "5.2.1信息安全方针信息安全方针"
+				},
+				{
+					"id":"infoSafety-fifth",
+					"title": "5.2.1信息安全方针信息安全方针"
+				}
+			]
+		},
+		{
+			"id": "construction",
+			"data": [
+				{
+					"id":"construction-first",
+					"title": "5.3.1信息安全方针信息安全方针"
+				},
+				{
+					"id":"construction-second",
+					"title": "5.3.1信息安全方针信息安全方针"
+				},
+				{
+					"id":"construction-third",
+					"title": "5.3.1信息安全方针信息安全方针"
+				},
+				{
+					"id":"construction-forth",
+					"title": "5.3.1信息安全方针信息安全方针"
+				},
+				{
+					"id":"construction-fifth",
+					"title": "5.3.1信息安全方针信息安全方针"
+				}
+			]
+		},
+		{
+			"id": "propertyControl",
+			"data": [
+				{
+					"id":"propertyControl-first",
+					"title": "5.4.1信息安全方针信息安全方针"
+				},
+				{
+					"id":"propertyControl-second",
+					"title": "5.4.1信息安全方针信息安全方针"
+				},
+				{
+					"id":"propertyControl-third",
+					"title": "5.4.1信息安全方针信息安全方针"
+				},
+				{
+					"id":"propertyControl-forth",
+					"title": "5.4.1信息安全方针信息安全方针"
+				},
+				{
+					"id":"propertyControl-fifth",
+					"title": "5.4.1信息安全方针信息安全方针"
+				}
+			]
+		}
+	]
+}
