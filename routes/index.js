@@ -26,30 +26,47 @@ router.post('/example', function (req, res) {
     }
 });
 
-function mock_data(id) {
-    id = (typeof id === "string")? JSON.parse(id) : id;
+function get_id(id) {
+    id = id ? id : 1;
+    id = (typeof id == "string") ? JSON.parse(id) : id;
     id = id * 10;
-    var result = [];
-    for (var i = 0; i < 10; i++) {
-        id += 1;
-        result.push({id: id, name: "项目" + id, price: "￥" + id})
-    }
-    return {data: result}
+    return id
 }
 
 router.get('/list1', function (req, res) {
     var params = req.query;
-    res.send(mock_data(params.id));
+    var id = get_id(params.id);
+    var result = [];
+    for (var i = 0; i < 10; i++) {
+        id += 1;
+        result.push({name: "项目" + id, table_2_id: id * 10, table_3_id: id * 100})
+    }
+    result = {data: result};
+    res.send(result);
 });
 
 router.get('/list2', function (req, res) {
     var params = req.query;
-    res.send(mock_data(params.id));
+    var id = get_id(params.id);
+    var result = [];
+    for (var i = 0; i < 10; i++) {
+        id += 1;
+        result.push({name: "项目" + id, table_3_id: id * 10})
+    }
+    result = {data: result};
+    res.send(result);
 });
 
 router.get('/list3', function (req, res) {
     var params = req.query;
-    res.send(mock_data(params.id));
+    var id = get_id(params.id);
+    var result = [];
+    for (var i = 0; i < 10; i++) {
+        id += 1;
+        result.push({name: "项目" + id, price: "￥" + id, detail: "这里是" + id + "的简介", method: "操作项" + id})
+    }
+    result = {data: result};
+    res.send(result);
 });
 
 module.exports = router;
