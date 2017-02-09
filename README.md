@@ -23,5 +23,5 @@
     $ cd BTLL
     $ npm install
     $ npm start
-    then you can add see it on [http://localhost:3000/demo.html](http://localhost:3000/demo.html)
+- then you can add see it on [http://localhost:3000/demo.html](http://localhost:3000/demo.html)
     
