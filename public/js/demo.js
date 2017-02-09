@@ -18,7 +18,7 @@ function queryParams_3() {
 
 function show_table_1() {
     $('#table1').bootstrapTable({
-        url: '/data/data1.json',
+        url: '/list1',
         columns: [{
             field: 'id',
             title: '一级列表'
@@ -34,7 +34,7 @@ function show_table_1() {
 
 function show_table_2() {
     $('#table2').bootstrapTable({
-        url: '/data/data2.json',
+        url: '/list2',
         columns: [{
             field: 'id',
             title: '二级列表'
@@ -50,7 +50,7 @@ function show_table_2() {
 
 function show_table_3() {
     $('#table3').bootstrapTable({
-        url: '/data/data3.json',
+        url: '/list3',
         columns: [{
             field: 'id',
             title: '三级列表'
