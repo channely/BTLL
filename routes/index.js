@@ -37,7 +37,7 @@ router.get('/list1', function (req, res) {
     var params = req.query;
     var id = get_id(params.id);
     var result = [];
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 15; i++) {
         id += 1;
         result.push({name: "项目" + id, table_2_id: id * 10, table_3_id: id * 100})
     }
@@ -49,7 +49,7 @@ router.get('/list2', function (req, res) {
     var params = req.query;
     var id = get_id(params.id);
     var result = [];
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 15; i++) {
         id += 1;
         result.push({name: "项目" + id, table_3_id: id * 10})
     }
@@ -61,10 +61,18 @@ router.get('/list3', function (req, res) {
     var params = req.query;
     var id = get_id(params.id);
     var result = [];
-    for (var i = 0; i < 10; i++) {
+
+    for (var i = 0; i < 15; i++) {
         id += 1;
-        result.push({name: "项目" + id, price: "￥" + id, detail: "这里是" + id + "的简介", method: "操作项" + id})
+        result.push({
+            control_point: "控制点" + id,
+            control_method: "控制措施" + id,
+            before_result: "预期结果" + id,
+            after_result: "检查结果" + id
+        });
     }
+    result[0].goal = "目标目标目标目标目标目标，目标目标目标目标目标目标，目标目标目标目标目标目标，目标目标目标目标目标目标，目标目标目标目标目标目标";
+    result[0].require = "要求要求要求要求要求要求，要求要求要求要求要求要求，要求要求要求要求要求要求，要求要求要求要求要求要求，要求要求要求要求要求要求";
     result = {data: result};
     res.send(result);
 });

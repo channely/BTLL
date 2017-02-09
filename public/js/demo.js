@@ -25,9 +25,10 @@ function refresh_table_by_id(id, paged) {
 function show_table_1(paged) {
     $('#table1').bootstrapTable({
         url: '/list1',
+        height: 413,
         columns: [{
             field: 'name',
-            title: '一级列表'
+            title: '控制层面'
         }],
         queryParams: queryParams_1,
         onClickRow: function (row) {
@@ -45,9 +46,10 @@ function show_table_1(paged) {
 function show_table_2(paged) {
     $('#table2').bootstrapTable({
         url: '/list2',
+        height: 413,
         columns: [{
             field: 'name',
-            title: '二级列表'
+            title: '控制层面'
         }],
         queryParams: queryParams_2,
         onClickRow: function (row) {
@@ -62,22 +64,40 @@ function show_table_2(paged) {
 function show_table_3(paged) {
     $('#table3').bootstrapTable({
         url: '/list3',
+        height: 413,
         columns: [{
-            field: 'name',
-            title: '三级列表'
+            field: 'goal',
+            title: '目标',
+            width: "10%"
         }, {
-            field: 'price',
-            title: '价格'
+            field: 'require',
+            title: '要求',
+            width: "10%"
         }, {
-            field: 'detail',
-            title: '简介'
+            field: 'control_point',
+            title: '控制点',
+            width: "10%"
         }, {
-            field: 'method',
-            title: '操作项'
+            field: 'control_method',
+            title: '控制措施',
+            width: "17%"
+        }, {
+            field: 'before_result',
+            title: '预期结果',
+            width: "20%"
+        }, {
+            field: 'after_result',
+            title: '检查结果',
+            width: "13%"
         }],
         queryParams: queryParams_3,
         onClickRow: function (row) {
             // 暂无操作
+        },
+        onLoadSuccess: function (response) {
+            var data_length = response.data.length;
+            $("#table3").bootstrapTable("mergeCells",{field:"goal", index:0, rowspan:data_length})
+            $("#table3").bootstrapTable("mergeCells",{field:"require", index:0, rowspan:data_length})
         }
     });
 }
